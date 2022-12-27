@@ -1,0 +1,285 @@
+Estouro de pilha
+
+Search…
+ 
+Login Inscreva-se
+Ao utilizar nosso site, você reconhece que leu e compreendeu nossa Política de Cookies , Política de Privacidade e nossos Termos de Serviço .
+
+Os resultados estão em! Veja o que quase 90.000 desenvolvedores escolheram como suas mais adoradas, temidas e desejadas linguagens de codificação e muito mais no 2019 Developer Survey.
+Casa
+PÚBLICO
+Estouro de pilha
+Tag
+Comercial
+Empregos
+Equipes
+Perguntas e respostas para o trabalho
+Saiba mais
+enviar um formulário que é carregado no popover bootstrap
+Perguntar
+ 
+0
+
+
+como enviar formulário carregado no popover bootstrap?
+
+Ao clicar em um botão, um formulário será carregado no popover e o mesmo usuário do formulário deve poder enviá-lo pressionando a tecla ENTER. verifique este violino
+
+Eu tentei assim, mas sua página inteira carregada
+
+ $('#popoverId').popover({
+        html: true,
+        title: 'Popover Title<a class="close" href="#");">&times;</a>',
+        content: $('#popoverContent').html(),
+    });
+
+    $('#popoverId').click(function (e) {
+        e.stopPropagation();
+    });
+
+    $(document).click(function (e) {
+        if (($('.popover').has(e.target).length == 0) || $(e.target).is('.close')) {
+            $('#popoverId').popover('hide');
+        }
+    });
+
+
+    //--------------script to to submit form after validation -------------
+
+      $(".popover").parent().find('#something').validate({
+                rules: {
+                               sproject_name: {
+                                   minlength: 3,
+                                   maxlength: 15,
+                                   required: true
+                               }, tooltip_options: {
+                                   sproject_name: {placement: 'center', html: true, trigger: 'focus'}
+                               }
+                           },
+                          submitHandler: function(e) {console.log("ajax logi goes here...."); 
+                                        }
+                       });
+Código HTML
+
+<h3>Live demo</h3>
+
+<button id="popoverId" class="popoverThis btn btn-large btn-danger">Click to open form</button>
+
+<div id="popoverContent" class="hide">
+   <form method="post" name="project-forms" id="something"><input  class="red-tooltip" id="sadd_project_id" name="sproject_name" type="text" required/></form>
+</div>
+javascript  jquery  twitter-bootstrap
+compartilhar melhorar esta questão
+perguntou 14 de abril de 2014 às 10:14
+
+user3482559
+1151111
+você precisa usar o .validatepopover clique. Veja a minha resposta para mais detalhes -  Hüseyin BABAL 14 de abril de 2014 às 10:32
+Adicione um comentário
+1 resposta
+votos mais antigos ativos
+
+1
+
+Você precisa usar o clique .validatedentro #popoverId. Porque você está usando no carregamento da página e, nesse momento, o formulário popover ainda não existe. Você pode ver o seguinte código e demonstração para entender as apostas;
+
+$('#popoverId').click(function (e) {
+    e.stopPropagation();
+    $('#something').validate({
+            rules: {
+                sproject_name: {
+                    minlength: 3,
+                    maxlength: 15,
+                    required: true
+                }
+            },
+        submitHandler: function(form) {
+            $.ajax({
+                type: $(form).attr('method'),
+                url: $(form).attr('action'),
+                data: $(form).serialize(),
+                dataType : 'json'
+            })
+            .done(function (response) {
+                if (response.success == 'success') {               
+                    alert('success');                       
+                } else {
+                    alert('fail');
+                }
+            });
+        return false;  
+        }
+    });
+
+});
+Veja demonstração de trabalho aqui: Demo
+
+compartilhar melhorar esta resposta
+editado abr 14 '14 às 16:57
+respondeu 14 de abril de 2014 às 10:29
+
+Hüseyin BABAL
+13,4 k44265
+Obrigado! você pode ajudar neste stackoverflow.com/questions/23052213/… -  user3482559 Apr 14 '14 às 10:56
+Se minha resposta corrigiu seu caso, você pode aprovar essa resposta e eu posso ajudar outra pergunta. Obrigado -  Hüseyin BABAL 14 de abril de 2014 às 10:58
+Eu já estou consertando isso e vou respondê-lo logo -  Hüseyin BABAL Apr 14 '14 at 11:49
+@Polks Você pode ver minha resposta aqui stackoverflow.com/questions/23052213/… -  Hüseyin BABAL Apr 14 '14 at 11:55
+Você precisa colocar o botão enviar para formar <input type="submit" style="height:0;width:0;padding:0;border:0;margin:0;"/>. Veja o exemplo de trabalho aqui jsfiddle.net/cubuzoa/aSZ6q/13 -  Hüseyin BABAL 14 de abril de 2014 às 14:01
+mostrar mais 2 comentários
+sua resposta
+
+Cadastre-se ou faça o login
+ Inscreva-se usando o Google
+ Inscreva-se usando o Facebook
+ Inscreva-se usando E-mail e Senha
+Postar como convidado
+Nome
+
+O email
+Obrigatório, mas nunca mostrado
+
+
+Postar sua resposta
+Ao clicar em "Postar sua resposta", você concorda com nossos termos de serviço , política de privacidade e política de cookies
+
+Não é a resposta que você está procurando? Navegue por outras questões marcadas como javascript  jquery  twitter-bootstrap ou faça sua própria pergunta .
+perguntei
+
+5 anos atrás
+
+visto
+
+575 vezes
+
+ativo
+
+5 anos atrás
+
+EM DESTAQUE NO META
+Anunciando a chegada do Valued Associate # 679: Cesar Manara
+Manutenção planejada agendada para 17 a 18 de abril de 2019 às 00: 00UTC (8:00 pm US / Eastern)
+Data Science Time! Abril de 2019 e salário com experiência
+O Ask Ask Wizard é o Live!
+Vinculado
+1
+como enviar um formulário carregado em popover de bootstrap
+Relacionado
+1375
+Pedido de postagem do JavaScript como um envio de formulário
+3841
+Qual valor de “href” devo usar para links de JavaScript, “#” ou “javascript: void (0)”?
+5671
+Qual operador de igual (== vs ===) deve ser usado em comparações de JavaScript?
+2464
+Como posso saber qual botão de opção está selecionado por meio do jQuery?
+1520
+Converter dados de formulário em objeto JavaScript com jQuery
+829
+Formulário de envio do jQuery AJAX
+3
+Bootstrap Popover com opção de fechamento adicionado também envia o formulário
+1062
+Centralizar uma coluna usando o Twitter Bootstrap 3
+0
+incapaz de enviar formulário carregado no popover bootstrap
+0
+enviar formulário carregado no popover bootstrap
+Perguntas frequentes sobre redes
+Como saber que você é um gigante?
+Existe algo como um gatilho de failover do Grupo de Disponibilidade?
+A documentação do grep está errada?
+Como eu faço esta fiação dentro do gabinete mais segura? (Foto)
+Como você chama a parte principal de uma piada?
+Para um novo professor assistente em CS, como construir / gerenciar um pipeline de publicação
+Como comparar dois arquivos diferentes linha por linha no unix?
+Como eu uso o novo elemento finito não-linear no Mathematica 12 para essa equação?
+O CEO é a "profissão" com mais psicopatas?
+O que está implícito na palavra 'Desika'
+Gere uma grade de cores RGB
+QGIS: como aplicar preenchimento de padrão de linha para LineStrings?
+Como faço para descobrir a mitologia e a história da minha fortaleza?
+As letras de soma não são duas
+Usando et al. para um último autor / sênior, em vez de um primeiro autor
+Como os pianistas alcançam dinâmicas extremamente altas?
+É ético fazer um exame final depois que o professor se demitiu antes de ensinar os demais capítulos do curso?
+Subsequências somadas máximas com itens não adjacentes
+SF livro sobre as pessoas presas em uma série de mundos que imaginam
+O que essa citação de Jacques Hadamard significa?
+Qual seria a fonte de energia ideal para um olho cibernético?
+Caixas de estilo "cautela"
+Pode alguma coisa ser vista do centro do vazio de Boötes? Quão escuro seria?
+Usando dicas de áudio para incentivar uma boa postura
+ pergunta feed
+ESTOURO DE PILHA
+Questões
+Empregos
+Diretório de empregos para desenvolvedores
+Calculadora Salarial
+Socorro
+Móvel
+Desativar a capacidade de resposta
+PRODUTOS
+Equipes
+Talento
+Propaganda
+Empreendimento
+EMPRESA
+Sobre
+pressione
+Trabalho aqui
+Legal
+Política de Privacidade
+Contate-Nos
+
+REDE DE TROCA DE PILHA
+Tecnologia
+Vida / Artes
+Cultura / Recreação
+Ciência
+De outros
+Blog
+Facebook
+Twitter
+LinkedIn
+design do site / logo © 2019 Stack Exchange Inc; contribuições de usuários licenciadas sob cc by-sa 3.0 com atribuição obrigatória . rev 2019.4.18.33353
+
+
+Perfeito
+
+
+
+
+inest link vestigar 
+
+http://jsfiddle.net/aSZ6q/15/
+?///////////////////////////////////////////////////////////////////////////////////////////////////////////
+$('#popoverId').click(function (e) {
+    e.stopPropagation();
+    $('#something').validate({
+            rules: {
+                sproject_name: {
+                    minlength: 3,
+                    maxlength: 15,
+                    required: true
+                }
+            },
+        submitHandler: function(form) {
+            $.ajax({
+                type: $(form).attr('method'),
+                url: $(form).attr('action'),
+                data: $(form).serialize(),
+                dataType : 'json'
+            })
+            .done(function (response) {
+                if (response.success == 'success') {               
+                    alert('success');                       
+                } else {
+                    alert('fail');
+                }
+            });
+        return false;  
+        }
+    });
+
+});
+//////////////////////////////////////////////////////////////////////////////////////////////

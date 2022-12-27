@@ -1,0 +1,38 @@
+body{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color:hsl(0deg 0% 94%);
+}
+
+.content_login{
+    background-color: #fff;
+    padding: 20px;
+    width: 300px;
+    border:solid;
+    border-color:#232323;
+    border-width: 1px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    color: hsl(0deg 0% 29%);
+
+}
+
+.h_1_login{
+    font-size: 80px;
+    text-transform:uppercase;
+    text-align: center;
+}
+
+.btn_login{
+    width: 100%;
+    background-color: hsl(359deg 57% 52%);
+    color: #fff;
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.login_logo{
+    width: 100%;
+}

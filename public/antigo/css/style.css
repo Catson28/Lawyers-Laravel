@@ -1,0 +1,578 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;900&family=Tiro+Telugu&display=swap');
+
+
+.reset-this {
+    animation : none;
+    animation-delay : 0;
+    animation-direction : normal;
+    animation-duration : 0;
+    animation-fill-mode : none;
+    animation-iteration-count : 1;
+    animation-name : none;
+    animation-play-state : running;
+    animation-timing-function : ease;
+    backface-visibility : visible;
+    background : 0;
+    background-attachment : scroll;
+    background-clip : border-box;
+    background-color : transparent;
+    background-image : none;
+    background-origin : padding-box;
+    background-position : 0 0;
+    background-position-x : 0;
+    background-position-y : 0;
+    background-repeat : repeat;
+    background-size : auto auto;
+    border : 0;
+    border-style : none;
+    border-width : medium;
+    border-color : inherit;
+    border-bottom : 0;
+    border-bottom-color : inherit;
+    border-bottom-left-radius : 0;
+    border-bottom-right-radius : 0;
+    border-bottom-style : none;
+    border-bottom-width : medium;
+    border-collapse : separate;
+    border-image : none;
+    border-left : 0;
+    border-left-color : inherit;
+    border-left-style : none;
+    border-left-width : medium;
+    border-radius : 0;
+    border-right : 0;
+    border-right-color : inherit;
+    border-right-style : none;
+    border-right-width : medium;
+    border-spacing : 0;
+    border-top : 0;
+    border-top-color : inherit;
+    border-top-left-radius : 0;
+    border-top-right-radius : 0;
+    border-top-style : none;
+    border-top-width : medium;
+    bottom : auto;
+    box-shadow : none;
+    box-sizing : content-box;
+    caption-side : top;
+    clear : none;
+    clip : auto;
+    color : inherit;
+    columns : auto;
+    column-count : auto;
+    column-fill : balance;
+    column-gap : normal;
+    column-rule : medium none currentColor;
+    column-rule-color : currentColor;
+    column-rule-style : none;
+    column-rule-width : none;
+    column-span : 1;
+    column-width : auto;
+    content : normal;
+    counter-increment : none;
+    counter-reset : none;
+    cursor : auto;
+    direction : ltr;
+    display : inline;
+    empty-cells : show;
+    float : none;
+    font : normal;
+    font-family : inherit;
+    font-size : medium;
+    font-style : normal;
+    font-variant : normal;
+    font-weight : normal;
+    height : auto;
+    hyphens : none;
+    left : auto;
+    letter-spacing : normal;
+    line-height : normal;
+    list-style : none;
+    list-style-image : none;
+    list-style-position : outside;
+    list-style-type : disc;
+    margin : 0;
+    margin-bottom : 0;
+    margin-left : 0;
+    margin-right : 0;
+    margin-top : 0;
+    max-height : none;
+    max-width : none;
+    min-height : 0;
+    min-width : 0;
+    opacity : 1;
+    orphans : 0;
+    outline : 0;
+    outline-color : invert;
+    outline-style : none;
+    outline-width : medium;
+    overflow : visible;
+    overflow-x : visible;
+    overflow-y : visible;
+    padding : 0;
+    padding-bottom : 0;
+    padding-left : 0;
+    padding-right : 0;
+    padding-top : 0;
+    page-break-after : auto;
+    page-break-before : auto;
+    page-break-inside : auto;
+    perspective : none;
+    perspective-origin : 50% 50%;
+    position : static;
+    /* May need to alter quotes for different locales (e.g fr) */
+    quotes : '\201C' '\201D' '\2018' '\2019';
+    right : auto;
+    tab-size : 8;
+    table-layout : auto;
+    text-align : inherit;
+    text-align-last : auto;
+    text-decoration : none;
+    text-decoration-color : inherit;
+    text-decoration-line : none;
+    text-decoration-style : solid;
+    text-indent : 0;
+    text-shadow : none;
+    text-transform : none;
+    top : auto;
+    transform : none;
+    transform-style : flat;
+    transition : none;
+    transition-delay : 0s;
+    transition-duration : 0s;
+    transition-property : none;
+    transition-timing-function : ease;
+    unicode-bidi : normal;
+    vertical-align : baseline;
+    visibility : visible;
+    white-space : normal;
+    widows : 0;
+    width : auto;
+    word-spacing : normal;
+    z-index : auto;
+    /* basic modern patch */
+    all: initial;
+    all: unset;
+}
+*
+{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    /* font-family: 'Roboto' sans-serif; */
+}
+
+body
+{
+    line-height: 1.5;
+    font-size: 16px;
+    font-family: 'Roboto';
+}
+::before,::after
+{
+    box-sizing: border-box;
+}
+ol,ul
+{
+    list-style: none;
+}
+
+button {
+    cursor: pointer;
+    outline: none;
+}
+
+.btn{
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 40px;
+    white-space: nowrap;
+    transition:all 0.3s ease;
+    border: none;
+}
+
+.btn-outline {
+    position: relative;
+    z-index: 3;
+    background: transparent;
+    color: hsl(0deg 0% 25%);
+    border-color: hsl(0deg 0% 25%);
+    border-style: solid;
+    border-width: 2px;
+    text-transform: uppercase;
+    transition: all 0.2s linear;
+}
+
+.btn-outline:hover {
+    color: white;
+    background: hsl(0deg 0% 25%);
+    border-color: white;
+    transition: all 0.2s linear;
+}
+
+.inpt_login{
+    font-size: 30px;
+    font-weight: 500;
+    white-space: nowrap;
+    transition:all 0.3s ease;
+    display:block;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.nav_general_top .horizontal li{
+    padding: 10px 0;
+}
+
+.search_nlett{
+    border-radius: 40px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.inwletter{
+    width: 300px;
+}
+
+.newslatter{
+    padding-bottom: 40px;
+}
+
+.foot_description{
+    padding-bottom: 20px;
+}
+
+.col_3_foot{
+    padding: 0 20px 100px;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.float_r{
+    float: right;
+}
+
+.float_l{
+    float: left;
+}
+
+.white-blue {
+    font-weight: 700;
+    color: #00aeef;
+    border-color: white;
+    background: white;
+}
+
+.white-blue:hover {
+    color: white;
+    background: #00aeef;
+    border-color: white;
+}
+
+.white-green {
+    font-weight: 700;
+    color: #7dc21e;
+    border-color: white;
+    background: white;
+}
+
+.white-green:hover {
+    color: white;
+    background: #7dc21e;
+    border-color: white;
+}
+
+.green-white:hover {
+    color: white;
+    background: #7dc21e;
+    border-color: #7dc21e;
+}
+.purple-white {
+    font-weight: 700;
+    color: #664e96;
+    border-color: #664e96;
+    background: transparent;
+}
+
+.purple-white:hover {
+    color: white;
+    background: #664e96;
+    border-color: #664e96;
+}
+.white-purple {
+    font-weight: 700;
+    color: #664e96;
+    border-color: white;
+    background: white;
+}
+
+.white-purple:hover {
+    color: white;
+    background: #664e96;
+    border-color: white;
+}
+.green-white {
+    font-weight: 700;
+    color: #7dc21e;
+    border-color: #7dc21e;
+    background: transparent;
+}
+
+.header_logo{
+    height: 40px;
+}
+
+.container_general
+{
+    max-width: 1114px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+}
+
+.header_general{
+    height: 90px;
+    align-items: center;
+    display: flex;
+}
+
+.horizontal{
+    display: flex;
+    flex-direction: row;
+}
+
+.horizontal a{
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: auto;
+    margin: 10px;
+    color: black;
+}
+
+.about_employer{
+    display: flex;
+}
+
+.left_img_employe{
+    width: 50%;
+    /* background-color: crimson; */
+    background-image: url('../img/Gabrielle-Turnquest-calle-011.webp');
+    background-size: cover;
+}
+
+.section_location{
+    display: flex;
+}
+
+.right_img_location{
+    width: 50%;
+    /* background-color: crimson; */
+    background-image: url('../img/download.jpeg');
+    background-size: cover;
+}
+
+.right_text_half{
+    width: 50%;
+    color: beige;
+    min-height: 80vh;
+    background-color:#232323;
+    background-position: center;
+    align-items: center;
+    display:flex;
+}
+
+.left_text_half{
+    width: 50%;
+    color: rgb(70, 70, 70);
+    min-height: 80vh;
+    background-color:#cfcbcb;
+    align-items: center;
+    display:flex;
+}
+
+.left_image_banner{
+    align-items: center;
+    display:flex;
+    padding: 100px 0;
+}
+
+
+.text_banner{
+    padding: 0 40px;
+}
+
+.text_half{
+    width: 550px;
+    padding: 150px;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    line-height: 2;
+}
+
+.text_half h2{
+    font-family: sans-serif;
+    font-size: 45px;
+    line-height: 1.2;
+    margin-bottom: 30px;
+}
+
+.spac_between
+{
+    justify-content: space-between;
+}
+
+.section_processess{
+    /* background-color:hsl(13deg 68% 37%); */
+    background-color:hsl(13deg 68% 21%);
+    color: white; 
+}
+
+.colun_3{
+    width: calc(100%/3);
+}
+
+.text_about_3{
+    display: flex;
+}
+
+.pdding-100-10-100{  
+    margin: 100px 10 100px; 
+}
+
+.process_type article h3{
+    padding-bottom: 20px;
+}
+
+.process_tp_logo{
+    overflow: hidden;
+    display: flex;
+}
+
+.process_tp_logo i{
+    font-size: 5.75em;
+    padding: 0 0 20px;
+}
+
+.employe_logo{
+    width: calc(100%/6);
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.employe_logo img{
+    width: 100px;
+}
+
+.texte{
+    height: 300px;
+}
+
+.footer{
+    color: #ffffff;
+    background-color: #232323;
+}
+
+.foot_employes_contact{
+    padding-top: 100px;
+}
+
+
+.footer_logo{
+    height: 40px;;
+}
+
+.enploye_footer{
+    padding: 25px 0 25px;
+}
+
+.search_nlett{
+    display: flex;
+}
+
+.test_pag{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    color: brown;
+}
+
+@media screen and (max-width: 1920px) {
+    .container_general
+    {
+        max-width: 1280px;
+        width: 100%;
+        margin: auto;
+    }
+
+    .text_half{
+        padding: 100px;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .container_general
+    {
+        max-width: 1354px;
+        width: 100%;
+        margin: auto;
+    }
+
+    .text_half{
+        padding: 100px;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    .container_general
+    {
+        max-width: 987px;
+        width: 100%;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .container_general
+    {
+        max-width: 1000px;
+        width: 100%;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .container_general
+    {
+        max-width: 881px;
+        width: 100%;
+        margin: auto;
+    }
+
+    .text_half{
+        padding: 70px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container_general
+    {
+        max-width: 660px;
+        width: 100%;
+        margin: auto;
+    }
+
+    .text_half{
+        padding: 50px;
+    }
+}

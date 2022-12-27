@@ -1,0 +1,33 @@
+/*
+*{
+  outline: none;
+  box-sizing: border-box;
+}
+
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  background-image: url(Assets_cs/img/img3.jpg);
+  background-size: cover;
+}
+.slick-track{
+  will-change:transform;
+
+}
+
+.*/
+
+html, body{
+  height: 100%;
+}
+
+#top{
+  background-image: url('img/background1.jpg');
+}
+
+#bot{
+  background-image: url('background2.jpg');
+}
